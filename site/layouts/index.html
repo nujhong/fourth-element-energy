@@ -1,13 +1,14 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+  {{ partial "jumbotron" .Params }}
 
-{{ partial "short-text" .Params.blurb}}
+  {{ partial "geothermal" .Params.geothermal }}
 
-{{ partial "2-up" .Params }}
+  {{ partial "about" .Params.about }}
 
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
+  {{ partial "projects" .Params.projects }}
 
-{{ partial "blog" . }}
+  {{ partial "contact-form" . }}
+
 
 {{ end }}

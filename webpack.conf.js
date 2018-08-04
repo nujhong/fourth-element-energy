@@ -17,10 +17,19 @@ export default {
     ]
   },
 
+  resolve: {
+    alias: {
+      "waypoints": "waypoints/lib/jquery.waypoints.js"
+    }
+  },
+
   plugins: [
     new webpack.ProvidePlugin({
-      "fetch": "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch"
-    })
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery",
+      "fetch": "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch",
+    }),
   ],
 
   context: path.join(__dirname, "src"),

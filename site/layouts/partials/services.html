@@ -1,0 +1,16 @@
+<div class="d-flex flex-column flex-sm-row align-items-stretch services wide_content mt-sm-5">
+  {{ range .services }}
+    <div class="service d-flex flex-row flex-sm-column justify-content-center align-items-center py-2 py-lg-5 m-1">
+      <div class="service_icon flex">
+        <img class="d-block my-2 mx-auto" src="{{ .icon }}"/>
+        <div class="service_text">{{ .title }}</div>
+      </div>
+      <ul class="list-unstyled flex py-2 my-0 w-100">
+        {{ range .text }}
+          <li><i class="fa fa-check mr-1" aria-hidden="true"></i>{{ . }}</li>
+        {{ end }}
+      </ul>
+      <!-- <span class="card-link"><i class="fa fa-caret-right mr-1" aria-hidden="true"></i>Learn More</span> -->
+    </div>
+  {{ end }}
+</div>

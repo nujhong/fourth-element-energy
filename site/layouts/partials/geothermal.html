@@ -1,0 +1,13 @@
+<section id="Geothermal" class="slides panel screen bg-light" data-bg="light">
+  {{range .tabs}}
+  <div data-tab="{{ .heading }}">
+    <div class="mx-auto d-flex flex-column justify-content-center align-items-center">
+      <div class="d-flex flex-column justify-content-center align-items-center content">
+        <h2 class="mb-1">{{ .title }}</p>
+        <img class="img-responsive mx-auto mb-1" src="{{ .image }}" />
+        <p class="mb-1">{{ .text }}</p>
+      </div>
+    </div>
+  </div>
+  {{end}}
+</section>
