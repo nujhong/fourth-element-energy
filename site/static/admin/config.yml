@@ -5,6 +5,22 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "data"
+    label: "Data"
+    files:
+      - label: Projects
+        name: projects
+        file: "site/data/projects.yml"
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Image, name: image, widget: image}
+              - {label: Overlay, name: overlay, widget: boolean}
+              - {label: Link, name: link, widget: string}
+              - {label: Description, name: description, widget: text}
   - name: "pages"
     label: "Pages"
     files:
@@ -22,11 +38,11 @@ collections: # A list of collections the CMS should be able to edit
             ]}
           - label: Geothermal
             name: geothermal
-            widget: object
+            widget: list
             fields:
               - label: Tabs
                 name: tabs
-                widget: object
+                widget: list
                 fields:
                   - {label: Heading, name: heading, widget: string}
                   - {label: Title, name: title, widget: string}
@@ -34,7 +50,7 @@ collections: # A list of collections the CMS should be able to edit
                   - {label: Text, name: text, widget: text}
           - label: About
             name: about
-            widget: object
+            widget: list
             fields:
               - label: Purpose
                 name: purpose
@@ -45,14 +61,14 @@ collections: # A list of collections the CMS should be able to edit
                   - {label: "Text", name: text, widget: text}
               - label: Team
                 name: team
-                widget: object
+                widget: list
                 fields:
                   - {label: "Tab title", name: tab, widget: string}
                   - {label: "Heading", name: heading, widget: string}
                   - {label: "Text", name: text, widget: list}
               - label: Research
                 name: research
-                widget: object
+                widget: list
                 fields:
                   - {label: "Tab title", name: tab, widget: string}
                   - {label: "Heading", name: heading, widget: string}
@@ -60,7 +76,7 @@ collections: # A list of collections the CMS should be able to edit
                   - {label: "Link", name: link, widget: string}
               - label: Media
                 name: media
-                widget: object
+                widget: list
                 fields:
                   - {label: "Tab title", name: tab, widget: string}
                   - {label: "Heading", name: heading, widget: string}
@@ -74,12 +90,3 @@ collections: # A list of collections the CMS should be able to edit
                       {label: Link, name: link, widget: string},
                       {label: Text, name: text, widget: list}
                     ]}
-          - label: Projects
-            name: projects
-            widget: list
-            fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Image, name: image, widget: image}
-              - {label: Overlay, name: overlay, widget: boolean}
-              - {label: Link, name: link, widget: string}
-              - {label: Description, name: description, widget: text}

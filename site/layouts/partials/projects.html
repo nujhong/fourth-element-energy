@@ -1,5 +1,5 @@
 <section id="Projects" class="slides panel screen bg-dark text-white" data-bg="dark">
-  {{ range .projects }}
+  {{ range .items }}
   <div style="background-image: {{if .overlay }}linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),{{ end }}url({{ .image }}); background-position: center center; background-size: cover;" data-tab="{{ title .title }}">
     <div class="w-50 mx-auto d-flex flex-column justify-content-center align-items-center">
       <h2 class="text-capitalize">
