@@ -33,11 +33,35 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Text", name: text, widget: text}
           - label: Team
             name: team
-            widget: list
+            widget: object
             fields:
               - {label: "Tab title", name: tab, widget: string}
               - {label: "Heading", name: heading, widget: string}
               - {label: "Text", name: text, widget: list}
+          - label: Research
+            name: research
+            widget: object
+            fields:
+              - {label: "Tab title", name: tab, widget: string}
+              - {label: "Heading", name: heading, widget: string}
+              - {label: "Text", name: text, widget: text}
+              - {label: "Link", name: link, widget: string}
+          - label: Media
+            name: media
+            widget: object
+            fields:
+              - {label: "Tab title", name: tab, widget: string}
+              - {label: "Heading", name: heading, widget: string}
+              - {label: "Items", name: items, widget: list, fields: [
+                  {label: Link, name: link, widget: string},
+                  {label: Source, name: source, widget: string},
+                  {label: Image, name: image, widget: image}
+                ]}
+              - {label: "Services", name: services, widget: list, fields: [
+                  {label: Icon, name: icon, widget: image},
+                  {label: Link, name: link, widget: string},
+                  {label: Text, name: text, widget: list}
+                ]}
   - name: "projects"
     label: "Projects"
     folder: "site/content/projects"
