@@ -12,8 +12,9 @@ collections: # A list of collections the CMS should be able to edit
         name: projects
         file: "site/data/projects.yml"
         fields:
-          - label: Items
-            name: items
+          - label: Projects
+            label_singular: Project
+            name: projects
             widget: list
             fields:
               - {label: Title, name: title, widget: string}
