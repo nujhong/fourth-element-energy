@@ -5,23 +5,16 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "data"
-    label: "Data"
-    files:
-      - label: Projects
-        name: projects
-        file: "site/data/projects.yml"
-        fields:
-          - label: Projects
-            label_singular: Project
-            name: projects
-            widget: list
-            fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Image, name: image, widget: image}
-              - {label: Overlay, name: overlay, widget: boolean}
-              - {label: Link, name: link, widget: string}
-              - {label: Description, name: description, widget: text}
+  - name: "projects"
+    label: "Projects"
+    folder: "site/content/projects"
+    create: true
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Image, name: image, widget: image}
+      - {label: Overlay, name: overlay, widget: boolean}
+      - {label: Link, name: link, widget: string}
+      - {label: Description, name: description, widget: text}
   - name: "pages"
     label: "Pages"
     files:
