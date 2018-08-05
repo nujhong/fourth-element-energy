@@ -5,6 +5,21 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Site Settings"
+        name: "site-settings"
+        file: "site/data/settings/site-settings.yml"
+        fields:
+          - {label: Page Title, name: page_title, widget: string}
+          - {label: Logo (White), name: logo_white, widget: image}
+          - {label: Logo (Normal), name: logo_normal, widget: image}
+      - label: "Contact"
+        name: "contact"
+        file: "site/data/settings/contact.yml"
+        fields:
+          - {label: Email Address, name: email_address, widget: text, pattern: ["^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$", "Must be a valid email address"]}
   - name: "sections"
     label: "Sections"
     files:
@@ -31,6 +46,11 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Tab title", name: tab, widget: string}
               - {label: "Heading", name: heading, widget: string}
               - {label: "Text", name: text, widget: text}
+              - {label: "Services", name: services, widget: list, fields: [
+                  {label: Icon, name: icon, widget: image},
+                  {label: Link, name: link, widget: string},
+                  {label: Text, name: text, widget: list}
+                ]}
           - label: Team
             name: team
             widget: object
@@ -57,11 +77,6 @@ collections: # A list of collections the CMS should be able to edit
                   {label: Source, name: source, widget: string},
                   {label: Image, name: image, widget: image}
                 ]}
-              - {label: "Services", name: services, widget: list, fields: [
-                  {label: Icon, name: icon, widget: image},
-                  {label: Link, name: link, widget: string},
-                  {label: Text, name: text, widget: list}
-                ]}
   - name: "projects"
     label: "Projects"
     folder: "site/content/projects"
@@ -87,57 +102,3 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Buttons, name: buttons, widget: list, allow_add: false, fields: [
               {label: Text, name: text, widget: string}
             ]}
-          - label: Geothermal
-            name: geothermal
-            widget: list
-            fields:
-              - label: Tabs
-                name: tabs
-                widget: list
-                fields:
-                  - {label: Heading, name: heading, widget: string}
-                  - {label: Title, name: title, widget: string}
-                  - {label: Image, name: image, widget: image}
-                  - {label: Text, name: text, widget: text}
-          - label: About
-            name: about
-            widget: list
-            fields:
-              - label: Purpose
-                name: purpose
-                widget: object
-                fields:
-                  - {label: "Tab title", name: tab, widget: string}
-                  - {label: "Heading", name: heading, widget: string}
-                  - {label: "Text", name: text, widget: text}
-              - label: Team
-                name: team
-                widget: list
-                fields:
-                  - {label: "Tab title", name: tab, widget: string}
-                  - {label: "Heading", name: heading, widget: string}
-                  - {label: "Text", name: text, widget: list}
-              - label: Research
-                name: research
-                widget: list
-                fields:
-                  - {label: "Tab title", name: tab, widget: string}
-                  - {label: "Heading", name: heading, widget: string}
-                  - {label: "Text", name: text, widget: text}
-                  - {label: "Link", name: link, widget: string}
-              - label: Media
-                name: media
-                widget: list
-                fields:
-                  - {label: "Tab title", name: tab, widget: string}
-                  - {label: "Heading", name: heading, widget: string}
-                  - {label: "Items", name: items, widget: list, fields: [
-                      {label: Link, name: link, widget: string},
-                      {label: Source, name: source, widget: string},
-                      {label: Image, name: image, widget: image}
-                    ]}
-                  - {label: "Services", name: services, widget: list, fields: [
-                      {label: Icon, name: icon, widget: image},
-                      {label: Link, name: link, widget: string},
-                      {label: Text, name: text, widget: list}
-                    ]}

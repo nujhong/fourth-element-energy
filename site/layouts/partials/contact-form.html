@@ -1,33 +1,22 @@
-<!-- Contact -->
-<div class="mb4">
-  <h4 class="f3 b lh-title mb3 tc">Drop us a line below</h4>
-
-  <form action="">
-    <div class="flex-l mhn1-l">
-          <!-- Name -->
-      <div class="ph1-l w-50-l">
-        <fieldset>
-          <input type="text" id="name" placeholder="Name" class="w-100 mb2">
-          <label for="name">Name</label>
-        </fieldset>
-      </div>
-          <!-- Email -->
-      <div class="ph1-l w-50-l">
-        <fieldset>
-          <input type="email" id="email" placeholder="Email" class="w-100 mb2">
-          <label for="email">Email</label>
-        </fieldset>
-      </div>
-    </div>
-
-        <!-- Message -->
-    <fieldset>
-      <textarea name="name" placeholder="Your message" rows="8" cols="80" id="message" class="w-100"></textarea>
-      <label for="message">Your message</label>
-    </fieldset>
-        <!-- Button -->
-    <div class="tc">
-      <button type="submit" class="btn w-100 w-auto-ns raise">Submit</button>
-    </div>
-  </form>
-</div>
+<section id="Contact" class="panel screen bg-light d-flex" data-bg="light">
+  <div class="flex d-flex justify-content-center align-items-center content mx-auto">
+    <!-- Netlify Form Hdandling -->
+    <!-- Note: Should be deprecated in the future (replace with MailChimp or similar) -->
+    <form name="contact" class="m-1 w-100" action="/pages/success" method="POST" netlify>
+        <h2>Contact Us</h2>
+        <div class="form-group text-left">
+          <input name="name" type="text" required/>
+          <label class="control-label" for="input">Name</label><i class="bar"></i>
+        </div>
+        <div class="form-group text-left">
+          <input name="email" type="email" required>
+          <label class="control-label" for="input">Email</label><i class="bar"></i>
+        </div>
+        <div class="form-group text-left">
+          <textarea name="message" required></textarea>
+          <label class="control-label" for="input">Message</label><i class="bar"></i>
+        </div>
+        <button type="submit" class="button"><span>Send</span></button>
+      </form>
+  </div>
+</section>
