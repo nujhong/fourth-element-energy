@@ -2,9 +2,9 @@
 
   {{ partial "jumbotron" .Params }}
 
-  {{ partial "geothermal" .Params.geothermal }}
+  {{ partial "geothermal" .Site.Data.geothermal }}
 
-  {{ partial "about" .Params.about }}
+  {{ partial "about" .Site.Data.about_us }}
 
   {{ partial "projects" .Site.Data.projects }}
 
