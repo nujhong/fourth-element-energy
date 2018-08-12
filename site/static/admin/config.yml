@@ -19,7 +19,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "contact"
         file: "site/data/settings/contact.yml"
         fields:
-          - {label: Email Address, name: email_address, widget: text, pattern: ["^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$", "Must be a valid email address"]}
+          - {label: Email Address, name: email_address, widget: string, pattern: ["^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$", "Must be a valid email address"]}
   - name: "sections"
     label: "Sections"
     files:

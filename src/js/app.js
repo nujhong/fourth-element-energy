@@ -70,9 +70,11 @@ $(() => {
         breakpoint: 480,
         settings: {
           dotsClass: "tabs",
-          customPaging: function(slider, i) {
-            var tab = $(slider.$slides[i]).data("tab");
-            return "<a>" + tab + "</a>";
+          customPaging: function(slick, i) {
+            var slide = $(slick.$slides[i]);
+            var tab = slide.find("[data-name]");
+            var name = tab.data("name");
+            return "<a>" + name + "</a>";
           },
           prevArrow: '<div class="arrow prev"><span class="fa fa-angle-left"></span></div>',
           nextArrow: '<div class="arrow next"><span class="fa fa-angle-right"></span></div>'
