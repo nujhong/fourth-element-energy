@@ -1,5 +1,5 @@
-<section id="Geothermal" class="slides panel screen bg-light" data-bg="light">
-  {{range .tabs}}
+{{/* <section id="Geothermal" class="slides panel screen bg-light" data-bg="light">
+  {{range .Params.tabs }}
     <div data-name="{{ .heading }}">
       <div class="mx-auto d-flex flex-column justify-content-center align-items-center">
         <div class="d-flex flex-column justify-content-center align-items-center content">
@@ -10,4 +10,9 @@
       </div>
     </div>
   {{end}}
-</section>
+</section> */}}
+<div>
+  {{ range . }}
+  {{ .Params.tabs }}
+  {{ end}}
+</div>

@@ -5,6 +5,14 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
+  - label: "Geothermal"
+    name: "geothermal"
+    folder: "site/content/geothermal"
+    fields:
+      - {label: Heading, name: heading, widget: string}
+      - {label: Title, name: title, widget: string}
+      - {label: Image, name: image, widget: image}
+      - {label: Text, name: text, widget: text}
   - name: "settings"
     label: "Settings"
     files:
@@ -23,18 +31,6 @@ collections: # A list of collections the CMS should be able to edit
   - name: "sections"
     label: "Sections"
     files:
-      - label: "Geothermal"
-        name: "geothermal"
-        file: "site/content/geothermal.md"
-        fields:
-          - label: Tabs
-            name: tabs
-            widget: list
-            fields:
-              - {label: Heading, name: heading, widget: string}
-              - {label: Title, name: title, widget: string}
-              - {label: Image, name: image, widget: image}
-              - {label: Text, name: text, widget: text}
       - label: "About us"
         name: "about-us"
         file: "site/data/about_us.yml"
