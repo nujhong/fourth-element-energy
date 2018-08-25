@@ -25,8 +25,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - label: "Geothermal"
         name: "geothermal"
-        file: "site/data/geothermal.yml"
-        extension: yml
+        file: "site/content/geothermal.md"
         fields:
           - label: Tabs
             name: tabs
