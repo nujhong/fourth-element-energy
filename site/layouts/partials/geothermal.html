@@ -1,18 +1,20 @@
-{{/* <section id="Geothermal" class="slides panel screen bg-light" data-bg="light">
-  {{range .Params.tabs }}
-    <div data-name="{{ .heading }}">
-      <div class="mx-auto d-flex flex-column justify-content-center align-items-center">
-        <div class="d-flex flex-column justify-content-center align-items-center content">
-          <h2 class="mb-1">{{ .title }}</p>
-          <img class="img-responsive mx-auto mb-1" src="{{ .image }}" />
-          <p class="mb-1">{{ .text }}</p>
+<section id="Geothermal" class="slides" data-bg="light">
+  {{ range where .Data.Pages "Section" "geothermal"}}
+    <div data-name="{{ .Params.heading }}">
+      <div class="hero is-white is-fullheight" style="background-image:url('{{ .Params.image }}')">
+      <div class="hero-body">
+          <div class="container">
+            <div class="columns is-centered">
+              <div class="column is-half">
+                <div class="content has-text-centered has-text-primary">
+                  <h2 class="title is-2">{{ .Params.title }}</h2>
+                  <p>{{ .Params.text }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  {{end}}
-</section> */}}
-<div>
-  {{ range . }}
-  {{ .Params.tabs }}
-  {{ end}}
-</div>
+  {{ end }}
+</section>

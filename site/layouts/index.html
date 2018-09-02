@@ -2,11 +2,11 @@
 
   {{ partial "jumbotron" .Params }}
 
-  {{ partial "geothermal" .Data.Pages "Section" "geothermal" }}
+  {{ partial "geothermal" . }}
 
-  {{ partial "about" .Site.Data.about_us }}
+  {{ partial "about" .Params.about }}
 
-  {{ partial "projects" .Site.Data.projects }}
+  {{ partial "projects" . }}
 
   {{ partial "contact-form" .Site.Data.settings }}
 

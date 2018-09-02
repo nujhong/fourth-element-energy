@@ -8,7 +8,8 @@ text: >-
   of water?
 image: /img/1-1-.png
 buttons:
-  - text: What is Geothermal?
-  - text: Why 4EE?
+  - target: "Geothermal"
+    text: What is Geothermal?
+  - target: "4EE"
+    text: Why 4EE?
 ---
-

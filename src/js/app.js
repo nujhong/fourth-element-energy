@@ -54,7 +54,10 @@ $(() => {
   });
 
   $(".slides").slick({
+    sldiesToShow: 1,
+    slidesToScroll: 1,
     arrows: true,
+    rows: 0,
     infinite: false,
     fade: true,
     cssEase: "linear",
@@ -63,7 +66,7 @@ $(() => {
     dots: true,
     dotsClass: "tabs mobile",
     customPaging: function(slider, i) {
-      return '<a class="text-xs"><span class="fa fa-circle"></span></a>';
+      return '<a class="text-xs"><i class="fa fa-circle"></i></a>';
     },
     responsive: [
       {
@@ -72,12 +75,11 @@ $(() => {
           dotsClass: "tabs",
           customPaging: function(slick, i) {
             var slide = $(slick.$slides[i]);
-            var tab = slide.find("[data-name]");
-            var name = tab.data("name");
+            var name = slide.data("name");
             return "<a>" + name + "</a>";
           },
-          prevArrow: '<div class="arrow prev"><span class="fa fa-angle-left"></span></div>',
-          nextArrow: '<div class="arrow next"><span class="fa fa-angle-right"></span></div>'
+          prevArrow: '<span class="prev"><i class="fa fa-angle-left" /></span>',
+          nextArrow: '<span class="next"><i class="fa fa-angle-right"></span></span>'
         }
       }
     ]

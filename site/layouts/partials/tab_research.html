@@ -1,9 +1,17 @@
-<div id="purpose" data-name="{{ .tab }}">
-  <div class="mx-auto d-flex flex-column justify-content-center align-items-center">
-    <div class="d-flex flex-column justify-content-center align-items-center content">
-      <h2>{{ if (.heading) }}{{ .heading }}{{ else }}{{ .tab }}{{ end }} </h2>
-      <p>{{ .text }}</p>
-      <a class="btn btn-secondary" target="_blank" href="{{ .link }}">Find out more</a>
+<section id="purpose" data-name="{{ .tab }}">
+  <div class="hero is-light is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <h2>{{ if (.heading) }}{{ .heading }}{{ else }}{{ .tab }}{{ end }} </h2>
+              <p>{{ .text }}</p>
+              <a class="btn btn-secondary" target="_blank" href="{{ .link }}">Find out more</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>

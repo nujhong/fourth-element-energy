@@ -1,0 +1,78 @@
+@import 'slick-carousel/slick/slick.css'
+
+$earth: #7C4100
+$green: #9BC19B
+$green-invert: #2A412A
+
+$primary: $earth
+$link: $green
+$link-invert: $green-invert
+
+$control-radius: 0px
+$input-focus-border-color: $primary
+$input-focus-box-shadow-color: rgba($primary, 0.25)
+@import "../../node_modules/bulma/bulma.sass"
+
+.is-fullscreen
+  height: 100vh
+
+.is-relative
+  position: relative
+
+#Projects .tabs li a
+  color: #fff
+
+.slick-dotted.slick-slider
+  margin-bottom: 0
+
+
+section[data-bg="light"]
+  .content .title, .slick-arrow
+    color: $primary
+  .content p
+    color: lighten($primary, 10%)
+section[data-bg="dark"] .slick-arrow
+  color: $white
+
+.slick-arrow
+  cursor: pointer
+  z-index: 100
+  font-size: 5rem
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  &.prev
+    left: 3rem
+  &.next
+    right: 3rem
+  &.slick-disabled
+    display: none !important
+
+.tabs
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  list-style: none
+  width: 100%
+  padding: 0 50px
+  // height: $bottom-margin
+  // max-height: $max-height
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-flow: row wrap
+  // &.eq *
+  //   min-width: 0
+  //   flex-basis: 200px
+  //   @include media-breakpoint-down(sm)
+  //     @include font-size(xs)
+
+  *
+    margin: 0 2vw
+    flex: 0 1 auto
+  &.mobile
+    li.slick-active
+      border-bottom: none
+    li:not(.slick-active)
+      opacity: 0.5 !important

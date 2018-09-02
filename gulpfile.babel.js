@@ -11,6 +11,7 @@ import svgstore from "gulp-svgstore";
 import svgmin from "gulp-svgmin";
 import inject from "gulp-inject";
 import cssnano from "cssnano";
+import sass from "gulp-sass";
 
 const browserSync = BrowserSync.create();
 const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
@@ -26,7 +27,8 @@ gulp.task("build", ["css", "js", "cms-assets", "hugo"]);
 gulp.task("build-preview", ["css", "js", "cms-assets", "hugo-preview"]);
 
 gulp.task("css", () => (
-  gulp.src("./src/css/*.css")
+  gulp.src("./src/css/*.sass")
+    .pipe(sass().on("error", sass.logError))
     .pipe(postcss([
       cssImport({from: "./src/css/main.css"}),
       cssnext(),
@@ -78,7 +80,7 @@ gulp.task("server", ["hugo", "css", "cms-assets", "js", "svg"], () => {
     }
   });
   gulp.watch("./src/js/**/*.js", ["js"]);
-  gulp.watch("./src/css/**/*.css", ["css"]);
+  gulp.watch("./src/css/**/*.sass", ["css"]);
   gulp.watch("./site/static/img/icons-*.svg", ["svg"]);
   gulp.watch("./site/**/*", ["hugo"]);
 });

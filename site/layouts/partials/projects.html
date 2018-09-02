@@ -1,11 +1,21 @@
-<section id="Projects" class="slides panel screen bg-dark text-white" data-bg="dark">
-  {{ range .items }}
-  <div style="background-image: {{if .overlay }}linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),{{ end }}url({{ .image }}); background-position: center center; background-size: cover;" data-tab="{{ title .title }}">
-    <div class="w-50 mx-auto d-flex flex-column justify-content-center align-items-center">
-      <h2 class="text-capitalize">
-        {{ .title }}
-      </h2>
-      <p>{{ .description }}</p>
+<section id="Projects" class="slides" data-bg="dark">
+  {{ range where .Data.Pages "Section" "projects"}}
+  <div data-name="{{ .Params.title }}">
+    <div class="hero is-dark is-fullheight" style="background-image: {{if .Params.overlay }}linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),{{ end }}url({{ .Params.image }}); background-position: center center; background-size: cover;">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <div class="content has-text-centered">
+                <h2 class="title is-uppercase">
+                  {{ .Params.title }}
+                </h2>
+                <p>{{ .Params.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   {{ end }}

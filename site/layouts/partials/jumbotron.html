@@ -1,11 +1,21 @@
-<header class="panel screen bg-dark d-flex" data-bg="dark" style="background-image: url('{{ .image }}')">
-  <div id="geothermal" class="flex d-flex justify-content-center align-items-center content flex-column mx-auto">
-    <h1 class="mb-3">{{ .title }}</h1>
-    <p class="mb-3">{{ .text }}</p>
-    <div class="buttons lead d-flex flex-column flex-sm-row mt-md-5 w-75">
-      {{ range .buttons }}
-      <a href="#{{.target}}" data-target="{{ .target }}" class="btn btn-secondary text-dark-green mr-3 mb-3">{{ .text }}</a>
-      {{ end }}
+<section class="hero is-fullheight is-dark" data-bg="dark" style="background-image: url('{{ .image }}')">
+  <div id="geothermal" class="hero-body">
+    <div class="container">
+      <div class="columns is-tablet is-centered">
+        <div class="column is-half">
+          <div class="has-text-centered content">
+            <h1 class="title is-1">{{ .title }}</h1>
+            <p class="has-text-white">{{ .text }}</p>
+            <div class="buttons is-centered">
+              {{ range .buttons }}
+              <a href="#{{.target}}" data-target="{{ .target }}" class="button is-link is-medium"><span class="is-size-6">{{ .text }}</span></a>
+              {{ end }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
-</header>
+</section>

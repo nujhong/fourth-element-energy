@@ -1,19 +1,24 @@
-<nav class="fixed-top navbar navbar-expand-lg dark">
-  <div class="navbar-wrapper d-flex flex-wrap justify-content-center align-items-center w-100 max-width-1440 mx-auto">
-    <a class="navbar-brand mr-auto" href="#">
-      <img class="white" src="/img/4EE-Logo-Horizontal-White.png" height="25px" width="auto"/>
-      <img class="normal" src="/img/4EE-Logo-Horizontal-Brown.png" height="25px" width="auto"/>
+<nav class="navbar is-fixed-top dark">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      {{/* <img class="white" src="/img/4EE-Logo-Horizontal-White.png" height="25px" width="auto"/> */}}
+      <img class="is-mobile normal" src="/img/4EE-Logo-Horizontal-Brown.png" height="25px" width="auto"/>
     </a>
 
-    <span class="fa fa-bars is-clickable navbar-toggler" data-target="#navCollapse" data-toggle="collapse"></span>
+    <a class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
 
-    <div id="navCollapse" class="collapse navbar-collapse">
-      <ul id="sitemap" class="ml-auto py-2 navbar-nav text-uppercase">
-        <li class="nav-item"><a class="nav-link active" href="#Geothermal">Geothermal</a></li>
-        <li class="nav-item"><a class="nav-link" href="#4EE">4EE</a></li>
-        <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
-      </ul>
+    <div id="navCollapse" class="navbar-menu">
+      <div class='navbar-start'></div>
+      <div class="navbar-end">
+        <a class="navbar-item is-active" href="#Geothermal">Geothermal</a>
+        <a class="navbar-item" href="#4EE">4EE</a>
+        <a class="navbar-item" href="#Projects">Projects</a>
+        <a class="navbar-item" href="#Contact">Contact</a>
+      </div>
     </div>
   </div>
 </nav>
