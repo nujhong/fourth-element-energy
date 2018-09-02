@@ -50,7 +50,8 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - {label: "Tab title", name: tab, widget: string}
           - {label: "Heading", name: heading, widget: string}
-          - {label: "Text", name: text, widget: text}
+          - {label: "Image", name: image, widget: image}
+          - {label: "Description", name: description, widget: markdown}
       - label: "Research"
         name: "research"
         file: "site/content/about-us/research.md"

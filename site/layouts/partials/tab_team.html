@@ -1,28 +1,24 @@
-<section id="purpose" data-name="{{ .tab }}">
+<div id="purpose" data-name="{{ .tab }}">
   <div class="hero is-light is-fullheight">
     <div class="hero-body">
       <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <div class="content has-text-centered">
-              <h2 class="mb-3">{{ if (.heading) }}{{ .heading }}{{ else }}{{ .tab }}{{ end }}</h2>
-              <div class="wide_content d-flex flex-column flex-md-row justify-content-center align-items-center">
-                <figure>
-                  <img class="img-responsive" src="{{ .image }}" />
-                </figure>
-                <ul class="list-unstyled text-left ml-3" style="flex-basis: 40%;">
-                  {{ range .text }}
-                    <li>
-                      <span class="fa fa-check mr-1"></span>
-                      {{ . }}
-                    </li>
-                  {{ end }}
-                </ul>
-              </div>
+
+          <h2 class="has-text-centered title is-2">{{ if (.heading) }}{{ .heading }}{{ else }}{{ .tab }}{{ end }}</h2>
+          <div class="columns is-centered">
+            <div class="column is-three-quarters">
+              <div class="columns is-vcentered">
+                <div class="column is-half">
+                  <figure class="image">
+                    <img src="{{ .image }}" alt="Our team"/>
+                  </figure>
+                </div>
+                <div class="column is-half">
+                  {{ .description }}
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
-</section>
+  </div>
+</div>

@@ -1,21 +1,19 @@
-<section class="hero is-fullheight is-dark" data-bg="dark" style="background-image: url('{{ .image }}')">
-  <div id="geothermal" class="hero-body">
+<section id="Hero" class="hero is-fullheight is-dark" data-bg="dark" style="background-image: url('{{ .image }}')">
+  <div class="hero-body">
     <div class="container">
       <div class="columns is-tablet is-centered">
         <div class="column is-half">
           <div class="has-text-centered content">
             <h1 class="title is-1">{{ .title }}</h1>
             <p class="has-text-white">{{ .text }}</p>
-            <div class="buttons is-centered">
+            <div class="buttons is-centered" style="margin-top:3rem;">
               {{ range .buttons }}
               <a href="#{{.target}}" data-target="{{ .target }}" class="button is-link is-medium"><span class="is-size-6">{{ .text }}</span></a>
               {{ end }}
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 </section>

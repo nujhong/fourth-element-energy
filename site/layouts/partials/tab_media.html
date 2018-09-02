@@ -5,13 +5,17 @@
         <div class="columns is-centered">
           <div class="column is-half">
             <div class="content has-text-centered">
-              <h2 class="mb-3">{{ if (.heading) }}{{ .heading }}{{ else }}{{ .tab }}{{ end }}</h2>
-              <div class="media wide_content flex d-flex">
-              {{ range .items }}
-                <a href="{{ .link }}" target="_blank" class="m-3" style="background: url('{{ .image }}') center center no-repeat; background-size: contain;">
-                </a>
-              {{ end }}
-              </div>
+              <h2 class="title is-2">{{ if (.heading) }}{{ .heading }}{{ else }}{{ .tab }}{{ end }}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-two-thirds">
+            <div class="media wide_content flex d-flex">
+            {{ range .items }}
+              <a href="{{ .link }}" target="_blank" class="m-3" style="background: url('{{ .image }}') center center no-repeat; background-size: contain;">
+              </a>
+            {{ end }}
             </div>
           </div>
         </div>

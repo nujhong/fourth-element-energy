@@ -1,6 +1,22 @@
 <section id="4EE" class="slides" data-bg="light">
-  {{ partial "tab_purpose" .purpose }}
-  {{ partial "tab_team" .team }}
-  {{ partial "tab_research" .research }}
-  {{ partial "tab_media" .media }}
+  {{ range where .Data.Pages "Section" "about-us" }}
+    {{ if (eq .Title "purpose") }}
+      {{ partial "tab_purpose" .Params }}
+    {{ end }}
+  {{ end }}
+  {{ range where .Data.Pages "Section" "about-us" }}
+    {{ if (eq .Title "team") }}
+      {{ partial "tab_team" .Params }}
+    {{ end }}
+  {{ end }}
+  {{ range where .Data.Pages "Section" "about-us" }}
+    {{ if (eq .Title "research") }}
+      {{ partial "tab_research" .Params }}
+    {{ end }}
+  {{ end }}
+  {{ range where .Data.Pages "Section" "about-us" }}
+    {{ if (eq .Title "media") }}
+      {{ partial "tab_media" .Params }}
+    {{ end }}
+  {{ end }}
 </section>

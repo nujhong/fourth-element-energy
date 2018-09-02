@@ -8,6 +8,7 @@ $primary: $earth
 $link: $green
 $link-invert: $green-invert
 
+$navbar-height: 12.5vh
 $control-radius: 0px
 $input-focus-border-color: $primary
 $input-focus-box-shadow-color: rgba($primary, 0.25)
@@ -22,16 +23,22 @@ $input-focus-box-shadow-color: rgba($primary, 0.25)
 #Projects .tabs li a
   color: #fff
 
+section#Hero .buttons
+  justify-content: space-evenly
+  > .button
+    max-width: 200px
+    flex: 1
+
 .slick-dotted.slick-slider
   margin-bottom: 0
 
 
 section[data-bg="light"]
-  .content .title, .slick-arrow
+  .content .title, .slick-arrow, .tabs li a
     color: $primary
   .content p
     color: lighten($primary, 10%)
-section[data-bg="dark"] .slick-arrow
+section[data-bg="dark"] .slick-arrow, .tabs li a
   color: $white
 
 .slick-arrow
@@ -53,15 +60,17 @@ section[data-bg="dark"] .slick-arrow
   bottom: 0
   left: 0
   right: 0
-  list-style: none
-  width: 100%
-  padding: 0 50px
-  // height: $bottom-margin
-  // max-height: $max-height
-  display: flex
-  align-items: center
-  justify-content: center
-  flex-flow: row wrap
+  height: 12.5vh
+  @media (min-width: $tablet)
+    min-height: 3rem
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-flow: row wrap
+    li a
+      border-bottom-color: transparent
+    li.slick-active a, li:hover a
+      border-bottom-color: inherit
   // &.eq *
   //   min-width: 0
   //   flex-basis: 200px
