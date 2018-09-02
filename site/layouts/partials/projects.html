@@ -8,9 +8,9 @@
             <div class="column is-half">
               <div class="content has-text-centered">
                 <h2 class="title is-uppercase">
-                  {{ .Params.title }}
+                  {{ title .Params.title }}
                 </h2>
-                <p>{{ .Params.description }}</p>
+                <p>{{ .Params.description | markdownify }}</p>
               </div>
             </div>
           </div>
