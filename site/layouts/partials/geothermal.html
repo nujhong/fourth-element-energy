@@ -1,14 +1,17 @@
 <section id="Geothermal" class="slides" data-bg="light">
   {{ range where .Data.Pages "Section" "geothermal"}}
     <div data-name="{{ .Params.heading }}">
-      <div class="hero is-white is-fullheight" style="background-image:url('{{ .Params.image }}')">
+      <div class="hero is-light is-fullheight">
       <div class="hero-body">
           <div class="container">
             <div class="columns is-centered">
               <div class="column is-half">
                 <div class="content has-text-centered has-text-primary">
                   <h2 class="title is-2">{{ .Params.title }}</h2>
-                  <p>{{ .Params.text }}</p>
+                  <figure class="image is-marginless">
+                    <img src="{{ .Params.image }}"/>
+                  </figure>
+                  <p>{{ .Content }}</p>
                 </div>
               </div>
             </div>

@@ -1,14 +1,17 @@
 {{ define "main" }}
 
-  {{ partial "jumbotron" .Params }}
+  <main>
 
-  {{ partial "geothermal" . }}
+    {{ partial "jumbotron" .Params }}
 
-  {{ partial "about"  . }}
+    {{ partial "geothermal" . }}
 
-  {{ partial "projects" . }}
+    {{ partial "about"  . }}
 
-  {{ partial "contact-form" .Site.Data.settings }}
+    {{ partial "projects" . }}
 
+    {{ partial "contact-form" .Site.Data.settings }}
+    
+  </main>
 
 {{ end }}

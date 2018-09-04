@@ -19,7 +19,7 @@ export default {
 
   resolve: {
     alias: {
-      "waypoints": "waypoints/lib/jquery.waypoints.js"
+      "waypoints": "waypoints/lib",
     }
   },
 

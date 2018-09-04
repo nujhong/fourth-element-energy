@@ -5,11 +5,19 @@ $green: #9BC19B
 $green-invert: #2A412A
 
 $primary: $earth
-$link: $green
-$link-invert: $green-invert
+$info: $green
+$info-invert: $green-invert
 
-$navbar-height: 12.5vh
-$control-radius: 0px
+$radius: 0
+$navbar-item-color: currentColor
+$navbar-item-hover-color: currentColor
+$navbar-burger-color: currentColor
+$navbar-tab-active-color: currentColor
+$navbar-tab-active-border-bottom-color: currentColor
+$navbar-tab-active-border-bottom-width: 1px
+$navbar-tab-hover-border-bottom-color: currentColor
+$navbar-padding-vertical: 1rem
+$control-radius: 2px
 $input-focus-border-color: $primary
 $input-focus-box-shadow-color: rgba($primary, 0.25)
 @import "../../node_modules/bulma/bulma.sass"
@@ -20,8 +28,56 @@ $input-focus-box-shadow-color: rgba($primary, 0.25)
 .is-relative
   position: relative
 
-#Projects .tabs li a
-  color: #fff
+.navbar > *
+  transition: all .2s ease
+
+.navbar.is-opened
+  color: $primary
+  .logo.dark
+    display: block
+  .logo.light
+    display: none
+.navbar:not(.is-opened)
+  &.dark
+    background: transparent
+    color: $white
+    .logo.dark
+      display: none
+    .logo.light
+      display: block
+  &.light
+    color: $primary
+    .logo.dark
+      display: block
+    .logo.light
+      display: none
+  &:not(.sticky)
+    color: $white
+    background: transparent
+    .logo.dark
+      display: none
+    .logo.light
+      display: block
+
+.navbar.sticky
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
+
+.navbar-item
+  margin-left: 1rem
+  margin-right: 1rem
+
+.navbar-burger
+  color: currentColor
+  &:hover
+    color: currentColor
+
+.slick-track
+    display: flex
+    .slick-slide
+        display: flex
+        height: auto
+        .hero
+          flex: 1
 
 section#Hero .buttons
   justify-content: space-evenly
@@ -32,18 +88,18 @@ section#Hero .buttons
 .slick-dotted.slick-slider
   margin-bottom: 0
 
-
 section[data-bg="light"]
   .content .title, .slick-arrow, .tabs li a
     color: $primary
   .content p
     color: lighten($primary, 10%)
-section[data-bg="dark"] .slick-arrow, .tabs li a
+
+section[data-bg="dark"] .slick-arrow, .tabs li a, .tabs li:hover a
   color: $white
 
 .slick-arrow
+  z-index: 1
   cursor: pointer
-  z-index: 100
   font-size: 5rem
   position: absolute
   top: 50%
@@ -60,28 +116,54 @@ section[data-bg="dark"] .slick-arrow, .tabs li a
   bottom: 0
   left: 0
   right: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-flow: row wrap
   height: 12.5vh
+  li a, li:hover a
+    border-bottom-color: transparent
+  li:not(.slick-active) a
+    opacity: 0.5 !important
   @media (min-width: $tablet)
+    height: 12.5vh
     min-height: 3rem
-    display: flex
-    align-items: center
-    justify-content: center
-    flex-flow: row wrap
+    li
+      margin: 0 2vw
+      flex: 0 1 auto
     li a
       border-bottom-color: transparent
     li.slick-active a, li:hover a
       border-bottom-color: inherit
-  // &.eq *
-  //   min-width: 0
-  //   flex-basis: 200px
-  //   @include media-breakpoint-down(sm)
-  //     @include font-size(xs)
 
-  *
-    margin: 0 2vw
-    flex: 0 1 auto
-  &.mobile
-    li.slick-active
-      border-bottom: none
-    li:not(.slick-active)
-      opacity: 0.5 !important
+div.media-features.columns
+  align-items: stretch
+  .column
+    display: flex
+    align-items: stretch
+    a
+      display: flex
+      align-items: center
+      user-select: center
+      overflow: hidden
+      transition: background 0.25s ease
+      border-radius: 6px
+      figure
+        display: flex
+        align-items: center
+        user-select: center
+        img
+          transition: transform 0.75s ease
+      &:hover
+        background: rgba(0, 0, 0, .75)
+        box-shadow: 0 3rem 3rem -1rem rgba(10,10,10,.2)
+        img
+          transform: scale(1.5)
+        figcaption
+          opacity: 1
+          text-decoration: underline
+          font-size: 1.5em
+          visibility: visible !important
+          display: flex
+          align-items: center
+          justify-content: center

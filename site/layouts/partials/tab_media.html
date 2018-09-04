@@ -1,5 +1,5 @@
-<section id="purpose" data-name="{{ .tab }}">
-  <div class="hero is-light is-fullheight">
+<div id="media" data-name="{{ .tab }}">
+  <div class="hero is-white is-fullheight">
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
@@ -10,16 +10,22 @@
           </div>
         </div>
         <div class="columns is-centered">
-          <div class="column is-two-thirds">
-            <div class="media wide_content flex d-flex">
-            {{ range .items }}
-              <a href="{{ .link }}" target="_blank" class="m-3" style="background: url('{{ .image }}') center center no-repeat; background-size: contain;">
-              </a>
-            {{ end }}
+          <div class="column is-three-quarters">
+            <div class="media-features columns is-vcentered is-centered is-multiline is-flex-mobile">
+              {{ range .items }}
+                <div class="column is-3 is-6-mobile">
+                  <a href="{{ .link }}" target="_blank" >
+                    <figure class="image">
+                      <img src="{{ .image }}"/>
+                      <figcaption class="is-overlay is-invisible has-text-white">View</figcaption>
+                    </figure>
+                  </a>
+                </div>
+              {{ end }}
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>

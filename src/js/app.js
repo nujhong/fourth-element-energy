@@ -1,9 +1,9 @@
 import $ from "jquery";
 import ScrollReveal from "scrollreveal";
-import "waypoints";
 import "bootstrap";
 import "slick-carousel/slick/slick";
-
+require("waypoints/lib/jquery.waypoints.js");
+require("waypoints/lib/shortcuts/inview.js");
 // JS Goes here - ES6 supported
 if (window.netlifyIdentity) {
   window.netlifyIdentity.on("init", (user) => {
@@ -30,18 +30,44 @@ $(() => {
         window.location.hash = href;
       });
     }
+    else {
+      $root.animate({
+        scrollTop: 0
+      }, 500);
+    }
   });
-
-  // Bootstrap Scrollspy
-  $("body").scrollspy({target: "#sitemap"});
 
   // Change navbar color scheme based on current section
   $("header, section").waypoint(function(direction) {
     const bg = (direction === "up") ? $(this.previous().element).data("bg") : $(this.element).data("bg");
+
     $("nav").removeClass("dark light");
     $("nav").addClass(bg);
   }, {
     offset: 50
+  });
+
+  $("section").each((index, element) => {
+    new Waypoint.Inview({
+      element: element,
+      entered: function(direction) {
+        $(`a[href^="#${element.id}"`).addClass("is-active");
+      },
+      exited: function(direction) {
+        $(`a[href^="#${element.id}"`).removeClass("is-active");
+      }
+    });
+  });
+
+
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function() {
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    $(".navbar").toggleClass("is-opened");
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
+
   });
 
   // Dettached effect
@@ -54,9 +80,9 @@ $(() => {
   });
 
   $(".slides").slick({
+    arrows: false,
     sldiesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
     rows: 0,
     infinite: false,
     fade: true,
@@ -64,15 +90,15 @@ $(() => {
     speed: 150,
     mobileFirst: true,
     dots: true,
-    dotsClass: "tabs mobile",
+    dotsClass: "tabs",
     customPaging: function(slider, i) {
-      return '<a class="text-xs"><i class="fa fa-circle"></i></a>';
+      return '<a><i class="fa fa-circle"></i></a>';
     },
     responsive: [
       {
-        breakpoint: 480,
+        breakpoint: 768,
         settings: {
-          dotsClass: "tabs",
+          arrows: true,
           customPaging: function(slick, i) {
             var slide = $(slick.$slides[i]);
             var name = slide.data("name");
@@ -87,10 +113,7 @@ $(() => {
 });
 
 
-// $('button').click(function () {
-// 	var _target = $(this).data('target')
-// 	// $('html, body').animate({
-// 	// 	scrollTop: $('#' + _target).offset().top - $('.navbar').outerHeight()
-// 	// }, 600)
-// 	gtag('event', 'select_content', {'content_type': _target})
-// })
+$("button").click(function() {
+  var _target = $(this).data("target");
+  gtag("event", "select_content", {"content_type": _target});
+});

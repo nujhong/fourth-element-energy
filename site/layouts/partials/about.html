@@ -6,7 +6,7 @@
   {{ end }}
   {{ range where .Data.Pages "Section" "about-us" }}
     {{ if (eq .Title "team") }}
-      {{ partial "tab_team" .Params }}
+      {{ partial "tab_team" . }}
     {{ end }}
   {{ end }}
   {{ range where .Data.Pages "Section" "about-us" }}
