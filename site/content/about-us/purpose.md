@@ -7,18 +7,18 @@ text: >-
   proposition to our customers Unique technologies and services to our customers
 services:
   - icon: /img/1520744012_noun_995832_cc.png
-    text: |-
-      * Traditional 
-      * _Geostructures _
-      * HVAC
+    list:
+      - Traditional
+      - Geostructures
+      - HVAC
     title: Design
   - icon: /img/1520744426_noun_1327123_cc.png
-    text: |-
-      * Laboratory
-      * In situ
+    list:
+      - Laboratory
+      - Testing
     title: Testing
   - icon: /img/1520744488_noun_1000173_cc.png
-    text: |
-      * Construction advice
+    list:
+      - Construction advice
     title: Project Management
 ---
