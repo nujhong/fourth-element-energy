@@ -39,11 +39,16 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Tab title", name: tab, widget: string}
           - {label: "Heading", name: heading, widget: string}
           - {label: "Text", name: text, widget: text}
-          - {label: "Services", name: services, widget: list, fields: [
-              {label: Title, name: title, widget: string},
-              {label: Icon, name: icon, widget: image},
-              {label: Text, name: text, widget: markdown}
-            ]}
+          - label: "Services"
+            name: services
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Icon, name: icon, widget: image}
+              - label: List
+                name: list
+                widget: list
+                hint: "text input for entering comma-separated values" allow_add: false
       - label: "Team"
         name: "team"
         file: "site/content/about-us/team.md"

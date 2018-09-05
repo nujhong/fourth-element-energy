@@ -11,14 +11,18 @@ export default class ServicesPreview extends React.Component {
           }
           return (
             <div class="column" key={index}>
-              <div class="card">
+              <div class="card" style={{height: "100%"}}>
                 <div class="card-content">
-                  <div class="content">
-                    <figure class="image is-96x96">
+                  <div class="content has-text-centered">
+                    <figure class="image is-96x96" style={{margin: "0 auto"}}>
                       <img class="image" src={service.getIn(["data", "icon"])} />
                     </figure>
-                    <h3 class="title is-size-6">{service.getIn(["data", "title"])}</h3>
-                    {service.getIn(["widgets", "text"])}
+                    <h3 class="title is-size-5">{service.getIn(["data", "title"])}</h3>
+                  </div>
+                  <div class="has-text-centered">
+                    <ul>
+                      {(service.getIn(["data", "list"]) || []).map((text) => <li>{text}</li>)}
+                    </ul>
                   </div>
                 </div>
               </div>

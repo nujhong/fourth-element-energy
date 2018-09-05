@@ -17,8 +17,8 @@ export default class PurposePreview extends React.Component {
                   <div class="content has-text-centered">
                     <h2 class="title is-2">{heading ? heading : title}</h2>
                     <p>{entry.getIn(["data", "text"])}</p>
-                    <Services services={services} />
                   </div>
+                  <Services services={services} />
                 </div>
               </div>
             </div>
