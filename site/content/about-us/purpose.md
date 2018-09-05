@@ -1,22 +1,24 @@
 ---
-title: "purpose"
-tab: "Purpose"
-heading: "We are 4EE"
-text: "Why do we exist, our motivation for developing this start up and our value proposition to our customers Unique technologies and services to our customers"
+tab: Purpose
+heading: We are 4EE
+text: >-
+  Why do we exist, our motivation for developing this start up and our value
+  proposition to our customers Unique technologies and services to our customers
 services:
-  - title: Design
-    icon: ''
-    text: >
-      * Traditional
-      * Geostructures
-      * HVAC
-  - title: Testing
-    icon: ''
-    text: >
+  - icon: ''
+    text: |-
+      * **Traditional **
+      * **_Geostructures _**
+      * **HVAC**
+    title: Design
+  - icon: ''
+    text: |-
       * Laboratory
       * In situ
-  - title: Project Management
-    icon: ''
-    text: >
+    title: Testing
+  - icon: ''
+    text: |
       * Construction advice
+    title: Project Management
 ---
+
