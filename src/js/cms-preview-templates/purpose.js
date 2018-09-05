@@ -13,7 +13,7 @@ export default class PurposePreview extends React.Component {
           <div class="hero-body">
             <div class="container">
               <div class="columns is-centered">
-                <div class="column is-half">
+                <div class="column is-three-quarters">
                   <div class="content has-text-centered">
                     <h2 class="title is-2">{heading ? heading : title}</h2>
                     <p>{entry.getIn(["data", "text"])}</p>

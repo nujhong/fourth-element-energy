@@ -1,16 +1,17 @@
-<div class="columns">
+<div class="columns is-centered">
   {{ range .services }}
     <div class="column">
-      <div class="service_icon flex">
-        <img class="d-block my-2 mx-auto" src="{{ .icon }}"/>
-        <div class="service_text">{{ .title }}</div>
+      <div class="card">
+        <div class="card-content">
+          <div class="content">
+            <figure class="image is-96x96">
+              <img class="image" src="{{ .icon }}" />
+            </figure>
+            <h3 class="title is-size-6">{{ .title }}</h3>
+            {{ .text }}
+          </div>
+        </div>
       </div>
-      <ul class="list-unstyled flex py-2 my-0 w-100">
-        {{ range .text }}
-          <li><i class="fa fa-check mr-1" aria-hidden="true"></i>{{ . }}</li>
-        {{ end }}
-      </ul>
-      <!-- <span class="card-link"><i class="fa fa-caret-right mr-1" aria-hidden="true"></i>Learn More</span> -->
     </div>
   {{ end }}
 </div>
