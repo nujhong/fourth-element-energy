@@ -7,9 +7,9 @@ text: >-
 services:
   - icon: ''
     text: |-
-      * **Traditional **
-      * **_Geostructures _**
-      * **HVAC**
+      * Traditional 
+      * _Geostructures _
+      * HVAC
     title: Design
   - icon: ''
     text: |-
