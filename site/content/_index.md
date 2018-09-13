@@ -1,5 +1,5 @@
 ---
-title: We need Geothermal
+title: We need Geothermal!
 text: >-
   The world is facing an energy trilemma around emissions reduction, low cost
   energy, and supply security. The solution is clean and cheap renewable energy.
@@ -8,8 +8,7 @@ text: >-
   of water?
 image: /img/1-1-.png
 buttons:
-  - target: "Geothermal"
-    text: What is Geothermal?
-  - target: "4EE"
-    text: Why 4EE?
+  - text: What is Geothermal?
+  - text: Why 4EE?
 ---
+
