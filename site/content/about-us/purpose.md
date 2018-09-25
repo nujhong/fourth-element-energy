@@ -1,7 +1,6 @@
 ---
-title: purpose
 tab: Purpose
-heading: We are 4EE
+heading: 'We are 4ee. '
 text: >-
   Why do we exist, our motivation for developing this start up and our value
   proposition to our customers Unique technologies and services to our customers
@@ -22,3 +21,4 @@ services:
       - Construction advice
     title: Project Management
 ---
+
